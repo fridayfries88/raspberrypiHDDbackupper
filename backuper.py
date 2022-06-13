@@ -7,6 +7,7 @@ if os.geteuid() != 0:
 
 #run updates on the system
 os.system('sudo apt update && sudo apt -y upgrade')
+os.system('sudo apt install 7zip')
 os.system('sudo fdisk -l')
 input("\n \n \n \n \n \n \n \n \n please plug in your drive and press return ")
 sleep(8)
@@ -23,6 +24,9 @@ os.system('mount ' + dev + ' /media/HDD')
 os.system('cp /media/HDD ' + out + '/' + filename + '/backup -r -v')
 #makes a disk image of the disk
 os.system('sudo dd if=' + dev + ' of=' + out + '/' + filename + '/' + 'diskimage.img' + ' bs=1k conv=noerror status=progress')
-print ('\n \n \n \n \n \n \n \n \n Backup Complete')
+#compresses the files
+os.system('sudo 7z a -r -y -sdel ' + out + '/' + filename + '.7z' + ' ' + out + '/' + filename)
 #unmounts the disk
 os.system('sudo umount ' + dev)
+#exits the program
+exit('\n \n \n \n \n \n \n \n \n Backup Complete')
