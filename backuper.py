@@ -1,9 +1,11 @@
 import os
 from time import sleep
 
+#check to see if the script has super user
 if os.geteuid() != 0:
     exit("You need to have root privileges to run this script.\nPlease try again, this time using 'sudo'. Exiting.")
 
+#run updates on the system
 os.system('sudo apt update && sudo apt -y upgrade')
 os.system('sudo fdisk -l')
 input("\n \n \n \n \n \n \n \n \n please plug in your drive and press return ")
