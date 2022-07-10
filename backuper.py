@@ -31,10 +31,11 @@ os.system('sudo umount ' + dev)
 os.system('mkdir /media/HDD')
 #mounts the Drive under the Directory under /media/HDD
 os.system('mount ' + dev + ' /media/HDD')
-#makes a disk image of the disk
-os.system('sudo dd if=' + dev + ' of=' + out + '/' + filename + '/' + 'diskimage.img' + ' bs=1k conv=noerror status=progress')
 #copys the files off the disk
 os.system('cp /media/HDD ' + out + '/' + filename + '/backup -r -v')
+os.system('clear')
+#makes a disk image of the disk
+os.system('sudo dd if=' + dev + ' of=' + out + '/' + filename + '/' + 'diskimage.img' + ' bs=1k conv=noerror status=progress')
 #clears the Screen of the previous text
 os.system('clear')
 #clears the display of text again
