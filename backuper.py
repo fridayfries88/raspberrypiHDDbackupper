@@ -33,8 +33,12 @@ os.system('mkdir /media/HDD')
 os.system('mount ' + dev + ' /media/HDD')
 #copys the files off the disk
 os.system('cp /media/HDD ' + out + '/' + filename + '/backup -r -v')
+#clears the Screen of the previous text
+os.system('clear')
 #makes a disk image of the disk
 os.system('sudo dd if=' + dev + ' of=' + out + '/' + filename + '/' + 'diskimage.img' + ' bs=1k conv=noerror status=progress')
+#clears the display of text again
+os.system('clear')
 #compresses the files
 os.system('sudo 7z a -r -y -sdel ' + out + '/' + filename + '.7z' + ' ' + out + '/' + filename)
 #unmounts the disk
