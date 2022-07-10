@@ -5,6 +5,8 @@ run with super user (SUDO)
 
 will copy the raw file and create a disk image
 
+it will the compress the file with 7zip to a .7z file
+
 
 # how to run
 
