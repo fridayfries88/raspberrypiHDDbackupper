@@ -10,6 +10,6 @@ it will the compress the file with 7zip to a .7z file
 
 # how to run
 
-git clone https://github.com/fridayfries88/raspberrypiHDDbuper
+git clone https://github.com/fridayfries88/raspberrypiHDDbackupper/blob/main/README.md
 
 sudo python3 backuper.py
